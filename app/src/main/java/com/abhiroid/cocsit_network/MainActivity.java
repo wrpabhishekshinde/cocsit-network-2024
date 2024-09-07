@@ -24,4 +24,8 @@ public class MainActivity extends AppCompatActivity {
     public void display(){
         System.out.println("ahklsjd");
     }
+
+    public void show(){
+        System.out.println("check update");
+    }
 }
