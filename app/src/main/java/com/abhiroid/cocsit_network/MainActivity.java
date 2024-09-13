@@ -28,4 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public void show(){
         System.out.println("check update");
     }
+    public void show1(){
+        System.out.println("check update");
+    }
 }
