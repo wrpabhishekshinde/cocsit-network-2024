@@ -1,12 +1,20 @@
 package com.abhiroid.cocsit_network;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.abhiroid.cocsit_network.model_response.CreateUserResponse;
+import com.abhiroid.cocsit_network.util.RetrofitClient;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,22 +28,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
-    public void display(){
-        System.out.println("ahklsjd");
+
+
     }
 
-    public void show(){
-        System.out.println("check update");
-    }
-    public void show1(){
-        System.out.println("check update");
-    }
-
-    public void showcheck1(){
-        System.out.println("check update");
-    }
-    //dfsdfsdfsdfsd
 
 
 }
