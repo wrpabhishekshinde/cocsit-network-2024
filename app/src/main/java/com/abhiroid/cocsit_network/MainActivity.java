@@ -9,6 +9,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.abhiroid.cocsit_network.fragments.SignUpFragment;
 import com.abhiroid.cocsit_network.model_response.CreateUserResponse;
 import com.abhiroid.cocsit_network.util.RetrofitClient;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
+        getSupportFragmentManager().beginTransaction().add(R.id.frameLayout , new SignUpFragment()).commit();
     }
 
 

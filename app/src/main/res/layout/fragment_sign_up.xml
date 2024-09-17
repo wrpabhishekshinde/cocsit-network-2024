@@ -1,14 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#6758BF"
     tools:context=".fragments.SignUpFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/constantText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_an_account"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        />
 
-</FrameLayout>
+    <RelativeLayout
+        android:id="@+id/addImgLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/constantText"
+        >
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileImg"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            app:shapeAppearanceOverlay="@style/CircleImageViewStyle"
+            android:scaleType="fitXY"
+            android:background="#99E9B0"
+            android:src="@drawable/profile_icon"
+            />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddImg"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/add_image"
+        app:shapeAppearanceOverlay="@style/CircleImageViewStyle"
+        android:src="@drawable/add_img_icon"
+        android:backgroundTint="#A4A5A8"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="60dp"
+        />
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/addImgLayout"
+        android:layout_marginTop="10dp"
+        >
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            tools:ignore="TextFields" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/dobLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dobLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+
+            <EditText
+                android:id="@+id/etDOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/dob"
+                android:inputType="date"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/btnImgCalender"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/calender"
+        android:src="@drawable/calender"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        />
+
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mobileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/dobLayout"
+        android:layout_marginTop="10dp"
+        >
+
+        <EditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mobile_no"
+            android:inputType="phone"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/mobileLayout"
+        android:layout_marginTop="10dp"
+        >
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnMaleImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailLayout"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="#6758BF"
+        app:strokeWidth="2dp"
+        app:strokeColor="#7EFFFFFF"
+        >
+
+        <ImageView
+            android:id="@+id/btnMaleImg"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/man"
+            android:contentDescription="@string/male_image"
+            android:layout_margin="10dp"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnFemaleImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="#6758BF"
+        app:strokeWidth="2dp"
+        app:strokeColor="#7EFFFFFF"
+        >
+
+        <ImageView
+            android:id="@+id/btnFemaleImg"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/women"
+            android:contentDescription="@string/male_image"
+            android:layout_margin="10dp"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/classSpinnerCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnMaleImage"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="#6758BF"
+        app:strokeWidth="1dp"
+        app:strokeColor="#7EFFFFFF"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_class"
+            android:textColor="#B5FFFFFF"
+            android:layout_marginStart="5dp"
+            android:layout_centerVertical="true"
+            />
+
+        <Spinner
+            android:id="@+id/classSpin"
+            android:layout_width="135dp"
+            android:layout_height="50dp"
+        />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/divSpinnerCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnMaleImage"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="#6758BF"
+        app:strokeWidth="1dp"
+        app:strokeColor="#7EFFFFFF"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_division"
+            android:textColor="#B5FFFFFF"
+            android:layout_marginStart="5dp"
+            android:layout_centerVertical="true"
+            />
+
+        <Spinner
+            android:id="@+id/divSpin"
+            android:layout_width="135dp"
+            android:layout_height="50dp"
+            />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProceed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/proceed"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:backgroundTint="#FF475A"
+        app:cornerRadius="7dp"
+        android:layout_below="@+id/classSpinnerCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+
+
+
+
+
+</RelativeLayout>
