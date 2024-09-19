@@ -1,7 +1,7 @@
 package com.abhiroid.cocsit_network.apis;
 
 import com.abhiroid.cocsit_network.model_response.CreateUserResponse;
-import com.abhiroid.cocsit_network.model_response.ProfileImage;
+import com.abhiroid.cocsit_network.model_response.CreateUser;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -24,11 +24,15 @@ public interface UsersAPI {
     );
 
     @FormUrlEncoded
-    @POST("image_controller/UploadProfileImage.php")
-    Call<ProfileImage> uploadProfileImg(
+    @POST("image_controller/CreateUser.php")
+    Call<CreateUser> createUser(
             @Field("title") String  title,
-            @Field("image") String  image
+            @Field("image") String  image,
+            @Field("first_name") String  first_name,
+            @Field("last_name") String  last_name,
+            @Field("email") String  email
     );
+
 
 
 }

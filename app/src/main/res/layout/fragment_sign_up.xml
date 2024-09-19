@@ -50,7 +50,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameLayout"
-        android:layout_width="match_parent"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginStart="30dp"
@@ -68,6 +68,29 @@
             tools:ignore="TextFields" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/surnameLayout"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/addImgLayout"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/nameLayout"
+        >
+
+        <EditText
+            android:id="@+id/etSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            tools:ignore="TextFields" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 
 
@@ -213,25 +236,11 @@
         app:strokeColor="#7EFFFFFF"
         >
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/select_class"
-            android:textColor="#B5FFFFFF"
-            android:layout_marginStart="5dp"
-            android:layout_centerVertical="true"
-            />
-
         <Spinner
             android:id="@+id/classSpin"
             android:layout_width="135dp"
             android:layout_height="50dp"
         />
-        </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -248,25 +257,12 @@
         app:strokeColor="#7EFFFFFF"
         >
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/select_division"
-            android:textColor="#B5FFFFFF"
-            android:layout_marginStart="5dp"
-            android:layout_centerVertical="true"
-            />
-
         <Spinner
             android:id="@+id/divSpin"
             android:layout_width="135dp"
             android:layout_height="50dp"
             />
-        </RelativeLayout>
+
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton

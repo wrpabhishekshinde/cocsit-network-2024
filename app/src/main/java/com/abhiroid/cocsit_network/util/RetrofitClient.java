@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = "http://192.168.50.89/cocsit_network/";
+    private static final String BASE_URL = "http://192.168.63.89/cocsit_network/";
     private static RetrofitClient retrofitClient;
     private Retrofit retrofit;
 
@@ -25,6 +25,8 @@ public class RetrofitClient {
 //                .addConverterFactory(GsonConverterFactory.create())
 //                .build();
 //    }
+
+
 
     private RetrofitClient(){
 
