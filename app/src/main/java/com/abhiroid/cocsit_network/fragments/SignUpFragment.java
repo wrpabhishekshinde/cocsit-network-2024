@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -30,6 +31,7 @@ import android.widget.Toast;
 import com.abhiroid.cocsit_network.R;
 import com.abhiroid.cocsit_network.apis.UsersAPI;
 import com.abhiroid.cocsit_network.model_response.CreateUser;
+import com.abhiroid.cocsit_network.model_response.EduDetailsResponse;
 import com.abhiroid.cocsit_network.util.RetrofitClient;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -45,6 +47,7 @@ import retrofit2.Response;
 
 public class SignUpFragment extends Fragment  implements View.OnClickListener {
 
+    //20/09/2024 this fragment completed...
     private final int CAMERA_REQ_CODE = 1000;
     private final int GALLERY_REQ_CODE = 2000;
     Bitmap bitmap;
@@ -62,6 +65,7 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
     String classs = "";
     String div = "";
     String gender = "";
+    private int userId ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -124,8 +128,7 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
         classSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                classs = classList.get(position).toString();
-                Toast.makeText(getContext(), classs, Toast.LENGTH_SHORT).show();
+                classs = classList.get(position);
             }
 
             @Override
@@ -138,8 +141,6 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 div = divList.get(position);
-                Toast.makeText(getContext(), div, Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -179,7 +180,6 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
         if (id == R.id.btnAddImg) {
             selectImage();
         } else if (id == R.id.btnProceed) {
-
             registerUser();
         } else {
             Toast.makeText(getContext(), "In Development", Toast.LENGTH_SHORT).show();
@@ -248,8 +248,10 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
             return;
         }
 
-        //register user..
+        //concatenate class and division string
+        String classDiv = classs+" ("+div+")";
 
+        //register user..
         String image = imageToString();
         if (image.isEmpty()) {
             Toast.makeText(getContext(), "Please upload image", Toast.LENGTH_SHORT).show();
@@ -262,18 +264,17 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
 
             call.enqueue(new Callback<CreateUser>() {
                 @Override
-                public void onResponse(Call<CreateUser> call, Response<CreateUser> response) {
+                public void onResponse(@NonNull Call<CreateUser> call, @NonNull Response<CreateUser> response) {
 
                     if (response.isSuccessful() && response.body() != null) {
                         CreateUser createUser = response.body();
 
                         if (createUser.getError().equals("000")) {
-
+                            insertEduDetails(createUser.getUserId() , mobile , dob , classDiv);
                             Toast.makeText(getContext(), createUser.getMessage(), Toast.LENGTH_LONG).show();
 
                         } else {
                             Toast.makeText(getContext(), createUser.getMessage(), Toast.LENGTH_SHORT).show();
-
                         }
                     } else {
 
@@ -282,12 +283,40 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
                 }
 
                 @Override
-                public void onFailure(Call<CreateUser> call, Throwable t) {
+                public void onFailure(@NonNull Call<CreateUser> call, @NonNull Throwable t) {
                     Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
+    }
 
+    private void insertEduDetails(int userId , String mobile , String dob , String classDiv){
+        Call<EduDetailsResponse> call = RetrofitClient.getInstance().getUserEduApi().insertEduDetails(userId , classDiv , mobile , dob , gender);
+
+        call.enqueue(new Callback<EduDetailsResponse>() {
+            @Override
+            public void onResponse(Call<EduDetailsResponse> call, Response<EduDetailsResponse> response) {
+                if(response.isSuccessful() && response.body() != null){
+
+                    EduDetailsResponse eduDetailsResponse = response.body();
+
+                    if(eduDetailsResponse.getError().equals("000")){
+
+                        Toast.makeText(getContext(), eduDetailsResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(getContext(), eduDetailsResponse.getError(), Toast.LENGTH_SHORT).show();
+                    }
+
+                }else {
+                    Toast.makeText(getContext(), "Failed Response", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<EduDetailsResponse> call, Throwable t) {
+                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

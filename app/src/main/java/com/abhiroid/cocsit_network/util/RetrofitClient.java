@@ -1,5 +1,6 @@
 package com.abhiroid.cocsit_network.util;
 
+import com.abhiroid.cocsit_network.apis.UserEduAPI;
 import com.abhiroid.cocsit_network.apis.UsersAPI;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,5 +56,9 @@ public class RetrofitClient {
 
     public UsersAPI getUserApi(){
         return retrofit.create(UsersAPI.class);
+    }
+
+    public UserEduAPI getUserEduApi(){
+        return  retrofit.create(UserEduAPI.class);
     }
 }

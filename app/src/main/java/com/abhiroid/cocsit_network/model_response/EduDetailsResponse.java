@@ -3,18 +3,7 @@ package com.abhiroid.cocsit_network.model_response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CreateUser {
-
-    @SerializedName("image")
-    @Expose
-    private String image;
-    @SerializedName("title")
-    @Expose
-    private String title;
-
-    @SerializedName("userId")
-    @Expose
-    private int userId;
+public class EduDetailsResponse {
 
     @SerializedName("error")
     @Expose
@@ -23,10 +12,9 @@ public class CreateUser {
     @Expose
     private String message;
 
-    public CreateUser(String error, String message , int userId) {
+    public EduDetailsResponse(String error, String message) {
         this.error = error;
         this.message = message;
-        this.userId = userId;
     }
 
     public String getError() {
@@ -43,13 +31,5 @@ public class CreateUser {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 }
