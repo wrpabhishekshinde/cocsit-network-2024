@@ -16,5 +16,10 @@
     <string name="proceed">Proceed</string>
     <string name="select_class">Select Class</string>
     <string name="select_division">Select Division</string>
+    <string name="email_verification">Email Verification</string>
+    <string name="enter_password">Enter password..</string>
+    <string name="enter_email">Enter email..</string>
+    <string name="next">Next</string>
+    <string name="verify">Verify</string>
 
 </resources>

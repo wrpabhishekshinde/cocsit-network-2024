@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -40,7 +41,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")//for retrofit
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")//for gson converter
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")//for connection of json
-    implementation("com.google.android.material:material:1.12.0")//it is for design
+    implementation(libs.material)
+    implementation(libs.firebase.auth)//it is for design
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
