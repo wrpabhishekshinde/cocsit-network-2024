@@ -4,38 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.AuthenticationFragment">
+    tools:context=".fragments.CreateUserNameFragment">
 
     <TextView
+        android:id="@+id/createUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email_verification"
+        android:text="@string/create_username"
         android:textSize="50sp"
         android:fontFamily="cursive"
         android:textStyle="bold"
         android:textColor="#FF5722"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/emailLayout"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="150dp"
         />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailLayout"
+        android:id="@+id/userNameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/createUsername"
+        android:layout_marginTop="70dp"
         app:boxStrokeWidth="2dp"
         >
 
         <EditText
-            android:id="@+id/etEmailLogin"
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_email"
+            android:autofillHints=""
+            android:hint="@string/enter_username"
             android:inputType="textEmailAddress"
             />
 
@@ -48,7 +49,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_below="@+id/emailLayout"
+        android:layout_below="@+id/userNameLayout"
         android:layout_marginTop="10dp"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="#000"
@@ -56,7 +57,7 @@
         >
 
         <EditText
-            android:id="@+id/etPasswordPass"
+            android:id="@+id/etUserPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -66,38 +67,39 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnVerify"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/verify"
-        android:background="#2140F0"
-        android:layout_below="@id/passwordLayout"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentEnd="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        />
+        android:layout_below="@+id/passwordLayout"
+        android:layout_marginTop="10dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#000"
+        app:boxStrokeWidth="2dp"
+        >
+
+        <EditText
+            android:id="@+id/etConfirmUserPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/confirm_your_password"
+            android:inputType="textPassword"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnNext"
+        android:id="@+id/btnNext1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/next"
-        android:background="#2140F0"
-        android:layout_below="@id/btnVerify"
+        android:background="#D80F31F4"
+        android:layout_below="@id/confirmPasswordLayout"
         android:layout_margin="30dp"
-    />
-
-    <TextView
-        android:id="@+id/tvRegisterLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/have_accout_login_account"
-        android:textAlignment="center"
-        android:textColor="#2140F0"
-        android:textSize="15sp"
-        android:layout_below="@id/btnNext"
-        android:layout_centerInParent="true"
         />
 
 

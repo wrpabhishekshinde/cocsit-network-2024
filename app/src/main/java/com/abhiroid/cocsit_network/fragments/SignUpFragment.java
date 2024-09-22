@@ -2,6 +2,7 @@ package com.abhiroid.cocsit_network.fragments;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -13,6 +14,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -101,6 +104,16 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
         divList.add("C");
         divList.add("D");
 
+
+        //to set authenticate email to the et box
+        Bundle bundle = getArguments();
+        if(bundle != null) {
+            String gmail = bundle.getString("email");
+            etEmail.setText(gmail);
+        }
+
+
+
         //for spinner
         ArrayAdapter<String> classAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, classList);
         classSpin.setAdapter(classAdapter);
@@ -149,7 +162,7 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
             }
         });
 
-        //for selecting gender
+        //for selecting male gender
         btnMaleImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -157,7 +170,7 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
                 Toast.makeText(getContext(), "Male", Toast.LENGTH_SHORT).show();
             }
         });
-
+        //for selecting female gender
         btnFemaleImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,10 +192,9 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
 
         if (id == R.id.btnAddImg) {
             selectImage();
-        } else if (id == R.id.btnProceed) {
+        }
+        if (id == R.id.btnProceed) {
             registerUser();
-        } else {
-            Toast.makeText(getContext(), "In Development", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -253,7 +265,7 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
 
         //register user..
         String image = imageToString();
-        if (image.isEmpty()) {
+        if (image.equals("?")) {
             Toast.makeText(getContext(), "Please upload image", Toast.LENGTH_SHORT).show();
         } else {
             String title = etName.getText().toString().trim();
@@ -270,7 +282,8 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
                         CreateUser createUser = response.body();
 
                         if (createUser.getError().equals("000")) {
-                            insertEduDetails(createUser.getUserId() , mobile , dob , classDiv);
+                            userId = createUser.getUserId();//for update username
+                            insertEduDetails(createUser.getUserId() , mobile , dob , classDiv);//for insert usert educational details
                             Toast.makeText(getContext(), createUser.getMessage(), Toast.LENGTH_LONG).show();
 
                         } else {
@@ -301,10 +314,10 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
                     EduDetailsResponse eduDetailsResponse = response.body();
 
                     if(eduDetailsResponse.getError().equals("000")){
-
+                        loadFragment(new CreateUserNameFragment());
                         Toast.makeText(getContext(), eduDetailsResponse.getMessage(), Toast.LENGTH_SHORT).show();
                     }else {
-                        Toast.makeText(getContext(), eduDetailsResponse.getError(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), eduDetailsResponse.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
                 }else {
@@ -375,6 +388,7 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
     }
 
     //compress the image and decode it ...
+    @SuppressLint("WrongThread")
     private String imageToString() {
         if (bitmap != null) {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -382,7 +396,26 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
             byte[] imageByte = byteArrayOutputStream.toByteArray();
             return Base64.encodeToString(imageByte, Base64.DEFAULT);
         }
-        return "";
+        return "?";
+    }
+
+
+    //load frag
+    public void loadFragment(Fragment fragment){
+        if(fragment != null) {
+
+            Bundle bundle = new Bundle();
+                bundle.putInt("userId" ,userId);
+            fragment.setArguments(bundle);
+
+            FragmentManager fm = getParentFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+
+            ft.replace(R.id.frameLayout , fragment);
+//            fm.popBackStack("Main" , FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            ft.addToBackStack("Main Activity");
+            ft.commit();
+        }
     }
 
 }

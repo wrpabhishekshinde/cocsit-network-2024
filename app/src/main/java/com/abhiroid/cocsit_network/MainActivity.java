@@ -8,8 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.abhiroid.cocsit_network.fragments.AuthenticationFragment;
+import com.abhiroid.cocsit_network.fragments.CreateUserNameFragment;
+import com.abhiroid.cocsit_network.fragments.LoginFragment;
 import com.abhiroid.cocsit_network.fragments.SignUpFragment;
 import com.abhiroid.cocsit_network.model_response.CreateUserResponse;
 import com.abhiroid.cocsit_network.util.RetrofitClient;
@@ -31,9 +36,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        getSupportFragmentManager().beginTransaction().add(R.id.frameLayout , new AuthenticationFragment()).commit();
+        loadFragment(new LoginFragment());
     }
 
+    public void loadFragment(Fragment fragment){
+        if(fragment != null) {
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
 
+            ft.add(R.id.frameLayout , fragment);
+//            fm.popBackStack("Main" , FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            ft.addToBackStack("Main Activity");
+            ft.commit();
+        }
+
+    }
 
 }

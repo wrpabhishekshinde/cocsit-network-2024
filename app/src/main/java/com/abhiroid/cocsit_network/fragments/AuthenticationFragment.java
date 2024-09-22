@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -72,7 +74,7 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
             navigateCreateAc();
         }
         if (id == R.id.tvRegisterLink) {
-//            startActivity(new Intent(LoginActivity.this , MainActivity.class));
+            loadFragment(new LoginFragment());
         }
     }
 
@@ -150,8 +152,9 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
                     if (currentUser.isEmailVerified()) {
                         if (Objects.equals(currentUser.getEmail(), userEmail)) {
                             // Navigate to the next screen or show success
-                            Toast.makeText(getContext(), "Successfully verified!", Toast.LENGTH_SHORT).show();
-                            // You can add logic here to proceed to the next screen, e.g., startActivity(new Intent(...));
+
+                            loadFragment(new SignUpFragment());
+
                         } else {
                             Toast.makeText(getContext(), "Emails do not match!", Toast.LENGTH_SHORT).show();
                         }
@@ -164,6 +167,24 @@ public class AuthenticationFragment extends Fragment implements View.OnClickList
             Toast.makeText(getContext(), "User not logged in", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+
+    public void loadFragment(Fragment fragment){
+        if(fragment != null) {
+
+            Bundle bundle = new Bundle();
+            bundle.putString("email" , userEmail);
+            fragment.setArguments(bundle);
+
+            FragmentManager fm = getParentFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+
+            ft.replace(R.id.frameLayout , fragment);
+//            fm.popBackStack("Main" , FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            ft.addToBackStack("Main Activity");
+            ft.commit();
+        }
     }
 
 

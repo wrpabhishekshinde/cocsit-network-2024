@@ -2,6 +2,7 @@ package com.abhiroid.cocsit_network.apis;
 
 import com.abhiroid.cocsit_network.model_response.CreateUserResponse;
 import com.abhiroid.cocsit_network.model_response.CreateUser;
+import com.abhiroid.cocsit_network.model_response.UserResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -31,6 +32,23 @@ public interface UsersAPI {
             @Field("first_name") String  first_name,
             @Field("last_name") String  last_name,
             @Field("email") String  email
+    );
+
+    //for create user name after account successfully created
+    @FormUrlEncoded
+    @POST("users/CreateUserName.php")
+    Call<UserResponse> createUserName(
+            @Field("id") int id ,
+            @Field("username") String username ,
+            @Field("password") String password
+    );
+
+    //for authenticate is user exist
+    @FormUrlEncoded
+    @POST("users/AuthUser.php")
+    Call<UserResponse> authUsername(
+            @Field("username") String username,
+            @Field("password") String password
     );
 
 
