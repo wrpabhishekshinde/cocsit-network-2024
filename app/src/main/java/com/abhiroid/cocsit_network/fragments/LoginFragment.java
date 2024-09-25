@@ -20,6 +20,7 @@ import com.abhiroid.cocsit_network.model_response.UserResponse;
 import com.abhiroid.cocsit_network.util.RetrofitClient;
 import com.abhiroid.cocsit_network.util.SharedPrefManager;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,8 +51,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         tvSignup.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
 
+        //initialize shared pref
         sharedPrefManager = new SharedPrefManager(getContext());
-
 
         return view;
     }
@@ -106,13 +107,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
 
+                UserResponse userResponse = response.body();
+
+
                 if(response.isSuccessful() && response.body() != null){
 
-                    UserResponse userResponse = response.body();
                     if(userResponse.getError().equals("000")){
 
                         sharedPrefManager.saveUser(userResponse.getUser());//it will store all value of users
-
+                        //navigate to the home fragment
+                        loadFragment(new HomeFragment());
                         Toast.makeText(getContext(), userResponse.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }else {
@@ -142,18 +146,17 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
             ft.replace(R.id.frameLayout , fragment);
 //            fm.popBackStack("Main" , FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            ft.addToBackStack("Main Activity");
+//            ft.addToBackStack("Main Activity");
             ft.commit();
         }
     }
 
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//
-//        if(sharedPrefManager.isLoogedIn()){
-//            Toast.makeText(getContext(), "Logged In already", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(sharedPrefManager.isLoogedIn()){
+           loadFragment(new HomeFragment());
+        }
+    }
 }

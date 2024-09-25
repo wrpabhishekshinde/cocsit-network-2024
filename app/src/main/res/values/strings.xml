@@ -34,5 +34,17 @@
     <string name="signup">Signup</string>
     <string name="or">OR</string>
     <string name="google_sign_in">Google Sign In</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Logout</string>
+
+
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="notification_buttion">Notification Buttion</string>
+    <string name="search">Search</string>
+    <string name="post">Post</string>
+    <string name="message">Message</string>
+    <string name="profile">Profile</string>
 
 </resources>

@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.abhiroid.cocsit_network.fragments.AuthenticationFragment;
 import com.abhiroid.cocsit_network.fragments.CreateUserNameFragment;
+import com.abhiroid.cocsit_network.fragments.HomeFragment;
 import com.abhiroid.cocsit_network.fragments.LoginFragment;
 import com.abhiroid.cocsit_network.fragments.SignUpFragment;
 import com.abhiroid.cocsit_network.model_response.CreateUserResponse;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
             ft.add(R.id.frameLayout , fragment);
 //            fm.popBackStack("Main" , FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            ft.addToBackStack("Main Activity");
+//            ft.addToBackStack("Main Activity");
             ft.commit();
         }
 
