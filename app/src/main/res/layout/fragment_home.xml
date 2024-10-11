@@ -7,12 +7,14 @@
     android:fitsSystemWindows="true"
     android:layout_gravity="start"
     tools:openDrawer="start"
+    android:background="#9403A9F4"
     android:id="@+id/drawerLayout"
     android:layout_marginTop="-30dp"
     tools:context=".fragments.HomeFragment">
 
     <include layout="@layout/bottom_nav_layout"
         />
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"

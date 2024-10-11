@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.abhiroid.cocsit_network.MainActivity;
 import com.abhiroid.cocsit_network.R;
@@ -32,8 +33,8 @@ public class HomeFragment extends Fragment {
 
     public static DrawerLayout drawerLayout;
     NavigationView navigationView;
-    Toolbar toolbar;
-    private BottomNavigationView bottomNavigationView;
+    public static Toolbar toolbar;
+//    private BottomNavigationView bottomNavigationView;
     ActionBarDrawerToggle toggle;
 
     SharedPrefManager sharedPrefManager;
@@ -55,7 +56,7 @@ public class HomeFragment extends Fragment {
         drawerLayout = view.findViewById(R.id.drawerLayout);
         navigationView = view.findViewById(R.id.navigationView);
         toolbar = view.findViewById(R.id.dashToolbar);
-        bottomNavigationView = view.findViewById(R.id.bottom_nav_view);
+//        bottomNavigationView = view.findViewById(R.id.bottom_nav_view);
 
 
         ((MainActivity)getActivity()).setSupportActionBar(toolbar);
@@ -70,6 +71,8 @@ public class HomeFragment extends Fragment {
 
         //for initialise the shared pre manager
         sharedPrefManager = new SharedPrefManager(getContext());
+
+
 
 
 
@@ -90,38 +93,38 @@ public class HomeFragment extends Fragment {
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
-                return false;
-            }
-        });
-
-
-        //for bottom nav layout
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                int id = item.getItemId();
-
-                if(id == R.id.btnHome){
-                    loadFragment(new HomeFragment());
-                }
-                if(id == R.id.btnSearch){
-                    loadFragmentDash(new SearchFragment());
-                }
-                if(id == R.id.btnCreatePost){
-                    loadFragmentDash(new CreatePostFragment());
-                }
-                if(id == R.id.btnMessage){
-                    loadFragmentDash(new DMFragment());
-                }
-                if(id == R.id.btnProfile){
-                    loadFragmentDash(new ProfileFragment());
-                }
-
-
                 return true;
             }
         });
+
+
+//        //for bottom nav layout
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//                int id = item.getItemId();
+//
+//                if(id == R.id.btnHome){
+//                    loadFragment(new HomeFragment());
+//                }
+//                if(id == R.id.btnSearch){
+//                    loadFragmentOnDash(new SearchFragment());
+//                }
+//                if(id == R.id.btnCreatePost){
+//                    loadFragmentOnDash(new CreatePostFragment());
+//                }
+//                if(id == R.id.btnMessage){
+//                    loadFragmentOnDash(new DMFragment());
+//                }
+//                if(id == R.id.btnProfile){
+//                    loadFragmentOnDash(new ProfileFragment());
+//                }
+//
+//
+//                return true;
+//            }
+//        });
 
 
         return view;
@@ -141,30 +144,42 @@ public class HomeFragment extends Fragment {
             ft.replace(R.id.frameLayout , fragment);
 
             fm.popBackStack(ROOT_FRAGMENT_TAG , FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            ft.addToBackStack("Main Activity");
+            ft.addToBackStack("Home Fragment");
 
             ft.commit();
         }
     }
 
     //load other fragments ....
-    public void loadFragmentDash(Fragment fragment){
+   /* public void loadFragmentOnDash(Fragment fragment){
         if(fragment != null) {
 
-            toolbar.removeAllViews();
 
             FragmentManager fm = getParentFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
 
-            ft.add(R.id.dashFrameLayout  ,  new SearchFragment());
+            //for check which fragment in load
+            Fragment currentFragment = fm.findFragmentById(R.id.dashFrameLayout);
+
+            if(currentFragment != null){
+
+               String existingFrag = fragment.getClass().getSimpleName();
+               String currentFrag = currentFragment.getClass().getSimpleName();
+
+               //if user loading that frag which is already in loading then we will pop back the stack
+               if(existingFrag.equals(currentFrag)){
+                   fm.popBackStack();
+               }
+            }
+
             ft.replace(R.id.dashFrameLayout , fragment);
 
             fm.popBackStack(ROOT_FRAGMENT_TAG , FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            ft.addToBackStack("Main Activity");
+            ft.addToBackStack("Home Fragment");
 
             ft.commit();
         }
-    }
+    }*/
 
     public void  closeDrawerLayout(){
 
@@ -179,9 +194,39 @@ public class HomeFragment extends Fragment {
                         setEnabled(false);
                         getActivity().onBackPressed();
                     }
+
                 }
             });
         }
     }
+
+   /* public void setSelectedBottomNav() {
+
+
+        FragmentManager fm = getParentFragmentManager();
+        Fragment frag = fm.findFragmentById(R.id.dashFrameLayout);
+
+
+        if(frag != null){
+            if(frag instanceof HomeFragment){
+                bottomNavigationView.setSelectedItemId(R.id.btnHome);
+            }
+            else if (frag instanceof  SearchFragment) {
+                bottomNavigationView.setSelectedItemId(R.id.btnSearch);
+            }
+            else if (frag instanceof  CreatePostFragment) {
+                bottomNavigationView.setSelectedItemId(R.id.btnCreatePost);
+            }
+            else if (frag instanceof  DMFragment) {
+                bottomNavigationView.setSelectedItemId(R.id.btnMessage);
+            }
+            else if (frag instanceof  ProfileFragment) {
+                bottomNavigationView.setSelectedItemId(R.id.btnProfile);
+            }
+        }else {
+            Toast.makeText(getContext(), "null", Toast.LENGTH_SHORT).show();
+        }
+
+    }*/
 
 }

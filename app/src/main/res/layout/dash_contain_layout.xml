@@ -34,12 +34,12 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <FrameLayout
+   <!-- <FrameLayout
         android:id="@+id/dashFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="?attr/actionBarSize"
-        >
+        >-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recentPostRecylerView"
@@ -49,7 +49,7 @@
         android:layout_marginBottom="?attr/actionBarSize"
         />
 
-    </FrameLayout>
+   <!-- </FrameLayout>-->
 
 
 

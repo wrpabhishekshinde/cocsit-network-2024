@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "42193885746",
+    "project_id": "cocsit-network",
+    "storage_bucket": "cocsit-network.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42193885746:android:135ac257bfeed4f6633a2b",
+        "android_client_info": {
+          "package_name": "com.abhiroid.cocsit_network"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWvxF9RBboZv97fzomZP1F_O4RwzUacc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

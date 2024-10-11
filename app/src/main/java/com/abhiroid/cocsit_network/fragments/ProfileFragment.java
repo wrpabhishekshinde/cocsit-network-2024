@@ -2,6 +2,7 @@ package com.abhiroid.cocsit_network.fragments;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -11,11 +12,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.abhiroid.cocsit_network.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileFragment extends Fragment {
+
+
 
 
 
@@ -27,14 +31,17 @@ public class ProfileFragment extends Fragment {
 
 
 
+
         return view;
     }
-
 
 
     //load other fragments ....
     public void loadFragment(Fragment fragment){
         if(fragment != null) {
+
+
+
             FragmentManager fm = getParentFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
 
@@ -46,4 +53,6 @@ public class ProfileFragment extends Fragment {
             ft.commit();
         }
     }
+
+
 }
