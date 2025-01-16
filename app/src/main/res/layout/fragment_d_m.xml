@@ -1,18 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.DMFragment">
+    android:background="@color/white">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DM"
-        android:textSize="44sp"
-        android:layout_centerInParent="true"/>
+    <!-- Header Section -->
+    <RelativeLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/purple_500">
 
+        <!-- Close Button -->
+        <ImageView
+            android:id="@+id/close_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_close"
+            android:contentDescription="Close" />
+
+        <!-- Header Texts -->
+        <TextView
+            android:id="@+id/you_received_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="You Received"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/message_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/you_received_text"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="4 Messages"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Contact List -->
+        <HorizontalScrollView
+            android:id="@+id/contact_list_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/message_count"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Contact Items -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_contact_rust"
+                        android:contentDescription="Contact Image" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Rust"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Repeat for other contacts -->
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+    <!-- Message List Section -->
+    <LinearLayout
+        android:id="@+id/message_list_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_layout"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <!-- Top bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/menu_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="Menu" />
+
+            <TextView
+                android:id="@+id/all_messages_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="All Messages(4)"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <!-- Message Items -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/message_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_home"
+            android:contentDescription="Home" />
+
+        <ImageView
+            android:id="@+id/nav_search"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Search" />
+
+        <ImageView
+            android:id="@+id/nav_add"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_add"
+            android:contentDescription="Add" />
+
+        <ImageView
+            android:id="@+id/nav_profile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile" />
+
+    </LinearLayout>
 
 </RelativeLayout>
