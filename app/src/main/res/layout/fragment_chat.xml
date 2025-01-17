@@ -47,45 +47,10 @@
             android:contentDescription="Close" />
 
         <!-- Contact List -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_below="@id/tvMessages"
-            android:layout_marginTop="16dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <!-- Individual Contact -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="16dp">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/contact_avatar" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rust"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp"
-                        android:gravity="center" />
-                </LinearLayout>
-
-                <!-- Add more contacts similarly -->
-            </LinearLayout>
-        </HorizontalScrollView>
     </RelativeLayout>
 
     <!-- Messages Section -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -112,36 +77,4 @@
     </LinearLayout>
 
     <!-- Bottom Navigation -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="#FFFFFF"
-        android:weightSum="3">
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_home"
-            android:background="@android:color/transparent"
-            android:contentDescription="Home" />
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_messages"
-            android:background="@android:color/transparent"
-            android:contentDescription="Messages" />
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_profile"
-            android:background="@android:color/transparent"
-            android:contentDescription="Profile" />
-    </LinearLayout>
 </LinearLayout>
