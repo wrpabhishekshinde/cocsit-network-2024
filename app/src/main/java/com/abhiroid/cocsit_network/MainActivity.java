@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        loadFragment(new DashboardFragment());
+        loadFragment(new LoginFragment());
     }
 
     public void loadFragment(Fragment fragment){
