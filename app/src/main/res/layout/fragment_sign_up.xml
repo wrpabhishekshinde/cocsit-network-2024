@@ -32,7 +32,7 @@
             app:shapeAppearanceOverlay="@style/CircleImageViewStyle"
             android:scaleType="fitXY"
             android:background="#99E9B0"
-            android:src="@drawable/profile_icon"
+            android:src="@drawable/profile_icon_"
             />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

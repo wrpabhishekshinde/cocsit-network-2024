@@ -11,7 +11,7 @@
         android:id="@+id/header_layout"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/purple_500">
+        android:background="@color/black">
 
         <!-- Close Button -->
         <ImageView
@@ -20,7 +20,7 @@
             android:layout_height="24dp"
             android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_close"
+            android:src="@drawable/add_image_profile"
             android:contentDescription="Close" />
 
         <!-- Header Texts -->
@@ -72,7 +72,7 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/ic_contact_rust"
+                        android:src="@drawable/woman_icon"
                         android:contentDescription="Contact Image" />
 
                     <TextView
@@ -111,7 +111,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentStart="true"
-                android:src="@drawable/ic_menu"
+                android:src="@drawable/background"
                 android:contentDescription="Menu" />
 
             <TextView
@@ -148,7 +148,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_home"
+            android:src="@drawable/baseline_dashboard_24"
             android:contentDescription="Home" />
 
         <ImageView
@@ -156,7 +156,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_search"
+            android:src="@drawable/back_arrow"
             android:contentDescription="Search" />
 
         <ImageView
@@ -164,7 +164,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_add"
+            android:src="@drawable/add_img_icon"
             android:contentDescription="Add" />
 
         <ImageView
@@ -172,7 +172,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_profile"
+            android:src="@drawable/back_arrow"
             android:contentDescription="Profile" />
 
     </LinearLayout>
