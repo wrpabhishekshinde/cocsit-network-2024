@@ -9,13 +9,13 @@
     tools:openDrawer="start"
     android:background="#9403A9F4"
     android:id="@+id/drawerLayout"
-    android:layout_marginTop="-30dp"
     tools:context=".fragments.HomeFragment">
 
 <!--
     <include layout="@layout/bottom_nav_layout"
         />
 -->
+    <include layout="@layout/home_frag_contain"/>
 
 
     <com.google.android.material.navigation.NavigationView
