@@ -21,7 +21,7 @@ import com.abhiroid.cocsit_network.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardControllerActivity extends AppCompatActivity {
-
+//activity for dashboard controller
     private static final String ROOT_FRAGMENT_TAG = "cocsit_dashboard1";
     private BottomNavigationView bottomNavigationView;
 
