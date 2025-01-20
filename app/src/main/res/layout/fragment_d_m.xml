@@ -1,180 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="#FFFFFF">
 
-    <!-- Header Section -->
-    <RelativeLayout
-        android:id="@+id/header_layout"
+    <!-- Header -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/header_card"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/black">
-
-        <!-- Close Button -->
-        <ImageView
-            android:id="@+id/close_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="16dp"
-            android:src="@drawable/add_image_profile"
-            android:contentDescription="Close" />
-
-        <!-- Header Texts -->
-        <TextView
-            android:id="@+id/you_received_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="You Received"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="#7A57D1"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/message_count"
+            android:id="@+id/header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/you_received_text"
+            android:layout_gravity="center_vertical|start"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="4 Messages"
-            android:textColor="@color/white"
-            android:textSize="24sp"
+            android:text="Rust Cohle"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
 
-        <!-- Contact List -->
-        <HorizontalScrollView
-            android:id="@+id/contact_list_scroll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/message_count"
-            android:layout_marginTop="16dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp">
-
-                <!-- Contact Items -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/woman_icon"
-                        android:contentDescription="Contact Image" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Rust"
-                        android:textColor="@color/white"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <!-- Repeat for other contacts -->
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-    </RelativeLayout>
-
-    <!-- Message List Section -->
-    <LinearLayout
-        android:id="@+id/message_list_section"
+    <!-- Chat Bubbles -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/header_layout"
-        android:orientation="vertical"
-        android:background="@color/white"
-        android:padding="16dp">
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/header_card"
+        app:layout_constraintBottom_toTopOf="@+id/input_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
 
-        <!-- Top bar -->
-        <RelativeLayout
+    <!-- Input Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/input_card"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="#7A57D1"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/message_input"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Type Message"
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#D6D6D6"
+                android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/menu_icon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/background"
-                android:contentDescription="Menu" />
+                android:id="@+id/send_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/message_send_icon"
+                android:contentDescription="Send Message" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/all_messages_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="All Messages(4)"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </RelativeLayout>
-
-        <!-- Message Items -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/message_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
-
-    </LinearLayout>
-
-    <!-- Bottom Navigation Bar -->
-    <LinearLayout
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/white"
-        android:gravity="center">
-
-        <ImageView
-            android:id="@+id/nav_home"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_margin="16dp"
-            android:src="@drawable/baseline_dashboard_24"
-            android:contentDescription="Home" />
-
-        <ImageView
-            android:id="@+id/nav_search"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_margin="16dp"
-            android:src="@drawable/back"
-            android:contentDescription="Search" />
-
-        <ImageView
-            android:id="@+id/nav_add"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_margin="16dp"
-            android:src="@drawable/add_img_icon"
-            android:contentDescription="Add" />
-
-        <ImageView
-            android:id="@+id/nav_profile"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_margin="16dp"
-            android:src="@drawable/user_profile"
-            android:contentDescription="Profile" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
