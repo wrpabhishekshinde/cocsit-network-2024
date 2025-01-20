@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        loadFragment(new SearchFragment());
+        loadFragment(new HomeFragment());
     }
 
     public void loadFragment(Fragment fragment){
