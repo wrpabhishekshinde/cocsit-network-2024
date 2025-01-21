@@ -46,5 +46,11 @@
     <string name="post">Post</string>
     <string name="message">Message</string>
     <string name="profile">Profile</string>
+    <string name="setting_">SETTING</string>
+    <string name="notice_advisiory">notice/advisiory</string>
+    <string name="cross">cross</string>
+    <string name="notice_advisory">Notice/Advisory</string>
+    <string name="search_here">Search Here</string>
+    <string name="recent">Recent</string>
 
 </resources>

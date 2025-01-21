@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.abhiroid.cocsit_network.DashboardControllerActivity;
 import com.abhiroid.cocsit_network.MainActivity;
 import com.abhiroid.cocsit_network.R;
 import com.abhiroid.cocsit_network.util.SharedPrefManager;
@@ -59,7 +60,7 @@ public class HomeFragment extends Fragment {
 //        bottomNavigationView = view.findViewById(R.id.bottom_nav_view);
 
 
-        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+        ((DashboardControllerActivity)getActivity()).setSupportActionBar(toolbar);
         toggle = new ActionBarDrawerToggle(getActivity() ,drawerLayout ,  toolbar  , R.string.open_drawer , R.string.close_drawer);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();

@@ -17,6 +17,7 @@ import com.abhiroid.cocsit_network.fragments.CreateUserNameFragment;
 import com.abhiroid.cocsit_network.fragments.DashboardFragment;
 import com.abhiroid.cocsit_network.fragments.HomeFragment;
 import com.abhiroid.cocsit_network.fragments.LoginFragment;
+import com.abhiroid.cocsit_network.fragments.SearchFragment;
 import com.abhiroid.cocsit_network.fragments.SignUpFragment;
 import com.abhiroid.cocsit_network.model_response.CreateUserResponse;
 import com.abhiroid.cocsit_network.util.RetrofitClient;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        loadFragment(new DashboardFragment());
+        loadFragment(new HomeFragment());
     }
 
     public void loadFragment(Fragment fragment){

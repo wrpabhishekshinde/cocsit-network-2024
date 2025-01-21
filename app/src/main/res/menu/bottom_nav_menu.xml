@@ -26,7 +26,7 @@
     <item
         android:id="@+id/btnProfile"
         android:title="@string/profile"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/profile_icon"
         />
 
 
