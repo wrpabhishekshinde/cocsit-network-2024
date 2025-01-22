@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#6E33A4">
 
-    <!-- Header Section -->
+    <!-- Header Section for the messaging -->
+<!--    it is a crushial way for texting-->
 
     <TextView
         android:id="@+id/header_text"
