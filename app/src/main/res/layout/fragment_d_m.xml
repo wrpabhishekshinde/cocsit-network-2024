@@ -13,12 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rust Colh"
-        android:layout_marginStart="150dp"
         android:textSize="24sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="16dp" />
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp" />
 
     <!-- Close Button -->
 
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
-        android:src="@drawable/home" />
+        android:src="@drawable/threedot" />
 
 
     <androidx.cardview.widget.CardView
@@ -51,35 +51,56 @@
         android:layout_marginBottom="-30dp"
         app:cardBackgroundColor="#FFFFFF">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="#6E33A4"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="35dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/message_input"
+                    android:layout_width="350dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="Type Message"
+                    android:layout_marginStart="5dp"
+                    android:padding="8dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#D6D6D6"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/send_button"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/send_message"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="Send Message" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
 
-<!--    <androidx.cardview.widget.CardView>-->
-<!--    <LinearLayout>-->
 
-<!--<EditText-->
-<!--                android:id="@+id/message_input"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:background="@null"-->
-<!--                android:hint="Type Message"-->
-<!--                android:padding="8dp"-->
-<!--                android:textColor="#FFFFFF"-->
-<!--                android:textColorHint="#D6D6D6"-->
-<!--                android:textSize="16sp" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/send_button"-->
-<!--                android:layout_width="48dp"-->
-<!--                android:layout_height="48dp"-->
-<!--                android:layout_gravity="center_vertical"-->
-<!--                android:src="@drawable/message_send_icon"-->
-<!--                android:contentDescription="Send Message" />-->
-<!--        </LinearLayout>-->
-<!--    </androidx.cardview.widget.CardView>-->
 

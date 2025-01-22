@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.abhiroid.cocsit_network.fragments.AuthenticationFragment;
 import com.abhiroid.cocsit_network.fragments.BioProfileFragment;
 import com.abhiroid.cocsit_network.fragments.CreateUserNameFragment;
+import com.abhiroid.cocsit_network.fragments.DMFragment;
 import com.abhiroid.cocsit_network.fragments.DashboardFragment;
 import com.abhiroid.cocsit_network.fragments.HomeFragment;
 import com.abhiroid.cocsit_network.fragments.LoginFragment;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        loadFragment(new ProfileFragment());
+        loadFragment(new DMFragment());
     }
 
     public void loadFragment(Fragment fragment){
