@@ -28,10 +28,17 @@
         android:id="@+id/close_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="360dp"
+        android:layout_margin="20dp"
         android:src="@drawable/back_" />
+
+    <ImageView
+        android:id="@+id/menuImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/home" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/message_list_card"
