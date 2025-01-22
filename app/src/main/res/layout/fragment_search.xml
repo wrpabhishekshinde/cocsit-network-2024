@@ -32,4 +32,12 @@
         android:layout_marginStart="20dp"
         />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notiRecyclerView"
+        android:layout_marginTop="150dp"
+        />
+
+
 </RelativeLayout>

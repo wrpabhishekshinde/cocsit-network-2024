@@ -18,25 +18,25 @@ public class CreatePostFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_create_post, container, false);
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        //for hide toolbar of dashboard
-        HomeFragment.toolbar.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        //for visible toolbar of dashboard
-        HomeFragment.toolbar.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        //for hide toolbar of dashboard
-        HomeFragment.toolbar.setVisibility(View.GONE);
-    }
+//
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        //for hide toolbar of dashboard
+//        HomeFragment.toolbar.setVisibility(View.GONE);
+//    }
+//
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//        //for visible toolbar of dashboard
+//        HomeFragment.toolbar.setVisibility(View.VISIBLE);
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        //for hide toolbar of dashboard
+//        HomeFragment.toolbar.setVisibility(View.GONE);
+//    }
 }

@@ -16,8 +16,10 @@ import androidx.fragment.app.FragmentTransaction;
 import com.abhiroid.cocsit_network.fragments.CreatePostFragment;
 import com.abhiroid.cocsit_network.fragments.DMFragment;
 import com.abhiroid.cocsit_network.fragments.HomeFragment;
+import com.abhiroid.cocsit_network.fragments.NotificationFragment;
 import com.abhiroid.cocsit_network.fragments.ProfileFragment;
 import com.abhiroid.cocsit_network.fragments.SearchFragment;
+import com.abhiroid.cocsit_network.fragments.SettingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardControllerActivity extends AppCompatActivity {
@@ -37,7 +39,7 @@ public class DashboardControllerActivity extends AppCompatActivity {
         });
 
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
-        bottomNavigationView.setSelectedItemId(R.id.btnHome);
+        loadFragment(new SettingFragment());
 
 
         //for bottom nav layout
@@ -62,8 +64,6 @@ public class DashboardControllerActivity extends AppCompatActivity {
                 if(id == R.id.btnProfile){
                     loadFragment(new ProfileFragment());
                 }
-
-
                 return true;
             }
         });
@@ -84,6 +84,4 @@ public class DashboardControllerActivity extends AppCompatActivity {
             ft.commit();
         }
     }
-
-
 }

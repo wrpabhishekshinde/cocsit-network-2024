@@ -31,26 +31,12 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
 
-        childContainer = view.findViewById(R.id.childContainer);
-        RelativeLayout.LayoutParams paramsLayout = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT , ViewGroup.LayoutParams.MATCH_PARENT);
-        childContainer.setLayoutParams(paramsLayout);
 
-        childContainer.addView(getCardView());
 
         return view;
     }
 
-    public View getCardView(){
-        profileCard = new CardView(getContext());
 
-        RelativeLayout.LayoutParams paramsCard = new RelativeLayout.LayoutParams(500 , 900);
-        paramsCard.addRule(RelativeLayout.CENTER_IN_PARENT);
-        profileCard.setLayoutParams(paramsCard);
-        profileCard.setBackgroundResource(R.drawable.background);
-
-
-        return profileCard;
-    }
 
     //load other fragments ....
     public void loadFragment(Fragment fragment){

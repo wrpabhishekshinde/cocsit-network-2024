@@ -9,6 +9,7 @@
     tools:openDrawer="start"
     android:background="#9403A9F4"
     android:id="@+id/drawerLayout"
+    android:layout_marginTop="-30dp"
     tools:context=".fragments.HomeFragment">
 
 <!--

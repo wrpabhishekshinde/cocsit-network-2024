@@ -1,14 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BioProfileFragment">
+    tools:context=".MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/side_menu"
+        android:layout_margin="20dp"
+        />
+
+
+
+    <!--    if you want to visible image on card then you have take card elevation attribute-->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cardCornerRadius="65dp"
+        app:cardElevation="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        app:strokeWidth="2dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/batman" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B7C2FF"
+        app:cardCornerRadius="30dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-</FrameLayout>
+            >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvName"
+            android:text="Akhilesh Salve"
+            android:textSize="20sp"
+            android:textColor="#FEFEFE"
+            android:layout_marginTop="70dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:backgroundTint="#858EFB"
+            app:cardCornerRadius="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: Batman "
+                android:textColor="#fff"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eduCardView"
+            android:backgroundTint="#DAFFFFFF"
+            app:cardCornerRadius="30dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hatImg"
+                    android:src="@drawable/educational_hat"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Educational Background"
+                    android:textSize="11sp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/hatImg"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#000"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="17dp"
+                    android:padding="7dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"/>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="After Effects"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginStart="30dp"
+                    />
+-->
+
+
+
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SOFT SKILLS"
+                    android:layout_marginTop="200dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="80dp"
+                    />
+-->
+
+
+
+
+
+
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leadership"
+                    android:layout_marginTop="250dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="20dp"
+
+                    />
+-->
+
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDegree"
+            android:layout_below="@+id/eduCardView"
+            android:text="BCS (A)"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:layout_marginStart="45dp"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvClassDiv"
+            android:text="Class &amp; Div"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/tvDegree"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="5dp"
+            />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:id="@+id/verticalLine"
+                android:layout_toEndOf="@id/tvClassDiv"
+                android:layout_below="@id/eduCardView"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/vertical_line"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAgeNo"
+                android:text="19"
+                android:fontFamily="serif"
+                android:textSize="21sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/eduCardView"
+                android:layout_toEndOf="@+id/verticalLine"
+                android:layout_marginStart="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAgeText"
+                android:text="Age"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/tvAgeNo"
+                android:layout_toEndOf="@+id/verticalLine"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="5dp"
+                />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:id="@+id/verticalLine2"
+                android:layout_toEndOf="@id/tvAgeText"
+                android:layout_below="@id/eduCardView"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/vertical_line"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/zodiacImg"
+                android:src="@drawable/zodiac"
+                android:layout_below="@id/eduCardView"
+                android:layout_toEndOf="@id/verticalLine2"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvZodiac"
+                android:text="Zodiac"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/verticalLine2"
+                android:layout_centerVertical="true"
+                android:layout_below="@id/zodiacImg"
+                />
+
+            
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bioCardView"
+                android:backgroundTint="#DAFFFFFF"
+                app:cardCornerRadius="30dp"
+                android:layout_below="@+id/tvAgeText"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvBio"
+                    android:text="Hey! I’m Alankar. I love learning, connecting with friends, and staying involved on campus. Let’s chat!"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:layout_margin="20dp"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnTieIn"
+                android:backgroundTint="#FF6D59"
+                android:text="Tie-In"
+                android:layout_below="@+id/bioCardView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
