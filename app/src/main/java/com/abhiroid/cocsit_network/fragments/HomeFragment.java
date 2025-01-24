@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
 
         drawerLayout = view.findViewById(R.id.drawerLayout);
-        navigationView = view.findViewById(R.id.navigationView);
+//        navigationView = view.findViewById(R.id.navigationView);
         toolbar = view.findViewById(R.id.dashToolbar);
 //        bottomNavigationView = view.findViewById(R.id.bottom_nav_view);
 

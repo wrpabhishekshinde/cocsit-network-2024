@@ -38,35 +38,35 @@ public class DashboardControllerActivity extends AppCompatActivity {
             return insets;
         });
 
-        bottomNavigationView = findViewById(R.id.bottom_nav_view);
-        loadFragment(new SettingFragment());
-
-
-        //for bottom nav layout
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                int id = item.getItemId();
-
-                if(id == R.id.btnHome){
-                    loadFragment(new HomeFragment());
-                }
-                if(id == R.id.btnSearch){
-                    loadFragment(new SearchFragment());
-                }
-                if(id == R.id.btnCreatePost){
-                    loadFragment(new CreatePostFragment());
-                }
-                if(id == R.id.btnMessage){
-                    loadFragment(new DMFragment());
-                }
-                if(id == R.id.btnProfile){
-                    loadFragment(new ProfileFragment());
-                }
-                return true;
-            }
-        });
+//        bottomNavigationView = findViewById(R.id.bottom_nav_view);
+//        loadFragment(new SettingFragment());
+//
+//
+//        //for bottom nav layout
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//                int id = item.getItemId();
+//
+//                if(id == R.id.btnHome){
+//                    loadFragment(new HomeFragment());
+//                }
+//                if(id == R.id.btnSearch){
+//                    loadFragment(new SearchFragment());
+//                }
+//                if(id == R.id.btnCreatePost){
+//                    loadFragment(new CreatePostFragment());
+//                }
+//                if(id == R.id.btnMessage){
+//                    loadFragment(new DMFragment());
+//                }
+//                if(id == R.id.btnProfile){
+//                    loadFragment(new ProfileFragment());
+//                }
+//                return true;
+//            }
+//        });
     }
 
     //load other fragments ....

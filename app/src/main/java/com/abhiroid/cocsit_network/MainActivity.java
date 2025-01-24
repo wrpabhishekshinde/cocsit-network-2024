@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        loadFragment(new DMFragment());
+        loadFragment(new SearchFragment());
     }
 
     public void loadFragment(Fragment fragment){
