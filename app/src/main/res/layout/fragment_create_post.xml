@@ -4,14 +4,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E88282"
     tools:context=".fragments.CreatePostFragment">
 
-
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Post"
-        android:textSize="44sp"
-        android:layout_centerInParent="true"/>
+        android:id="@+id/tvPost"
+        android:text="POST"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="27sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#0B0A0A"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+/>
+    <ImageView
+        android:id="@+id/close_buttonPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/cross_two"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/postCard"
+        android:layout_below="@id/tvPost"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/etPost"
+            android:autofillHints=""
+            android:hint="What's in your mind"
+            android:inputType="text"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgPin"
+            android:src="@drawable/pin_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/etPost"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgPost"
+                android:src="@drawable/camera_icon"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/etPost"
+                android:layout_marginEnd="80dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="10dp"
+                />
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnTieIn"
+        android:backgroundTint="#FF475A"
+        android:text="POST"
+        android:layout_below="@+id/postCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        />
+
+
+
+
+
+
 </RelativeLayout>

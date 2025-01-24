@@ -13,10 +13,10 @@
         android:id="@+id/header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:text="You Received"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
         android:textSize="16sp" />
 
     <TextView
@@ -25,11 +25,23 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/header_text"
         android:text="4 Messages"
-       android:layout_marginStart="15dp"
+       android:layout_marginStart="20dp"
         android:textSize="24sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginTop="2dp"
+/>
+    <TextView
+        android:id="@+id/tvContList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_messages"
+        android:text="Contact List"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp" />
 
     <!-- Close Button -->
     <ImageView
@@ -37,38 +49,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:src="@drawable/closing"
         />
 
     <!-- Contact List -->
-    <HorizontalScrollView
-        android:id="@+id/contact_list"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/header_messages"
-        android:layout_marginBottom="16dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-        </LinearLayout>
-    </HorizontalScrollView>
 
     <!-- Message List Section -->
     <androidx.cardview.widget.CardView
         android:id="@+id/message_list_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/contact_list"
+        android:layout_marginTop="230dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         app:cardCornerRadius="45dp"
         android:layout_marginBottom="-30dp"
         app:cardBackgroundColor="#FFFFFF">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/menuImgChat"
+            android:src="@drawable/side_menu_"
+            android:layout_margin="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/tvRecentMessg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="25dp"
+            android:text="Recent Messages"
+            android:textStyle="bold"
+/>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 

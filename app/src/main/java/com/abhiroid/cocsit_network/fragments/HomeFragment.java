@@ -83,15 +83,15 @@ public class HomeFragment extends Fragment {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 int id = item.getItemId();
-
-                if(id == R.id.btnLogout){
-                    sharedPrefManager.logOut();
-                    loadFragment(new LoginFragment());
-                }
-
-                if(id == R.id.btnSetting){
-                    loadFragment(new SettingFragment());
-                }
+//
+//                if(id == R.id.btnLogout){
+//                    sharedPrefManager.logOut();
+//                    loadFragment(new LoginFragment());
+//                }
+//
+//                if(id == R.id.btnSetting){
+//                    loadFragment(new SettingFragment());
+//                }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;

@@ -45,22 +45,22 @@
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                     int id = item.getItemId();
-
-                    if(id == R.id.btnHome){
-                        loadFragmentDash(new HomeFragment() , false);
-                    }
-                    if(id == R.id.btnSearch){
-                        loadFragmentDash(new SearchFragment() , false);
-                    }
-                    if(id == R.id.btnCreatePost){
-                        loadFragmentDash(new CreatePostFragment(), false);
-                    }
-                    if(id == R.id.btnMessage){
-                        loadFragmentDash(new DMFragment() , false);
-                    }
-                    if(id == R.id.btnProfile){
-                        loadFragmentDash(new ProfileFragment() , false);
-                    }
+//
+//                    if(id == R.id.btnHome){
+//                        loadFragmentDash(new HomeFragment() , false);
+//                    }
+//                    if(id == R.id.btnSearch){
+//                        loadFragmentDash(new SearchFragment() , false);
+//                    }
+//                    if(id == R.id.btnCreatePost){
+//                        loadFragmentDash(new CreatePostFragment(), false);
+//                    }
+//                    if(id == R.id.btnMessage){
+//                        loadFragmentDash(new DMFragment() , false);
+//                    }
+//                    if(id == R.id.btnProfile){
+//                        loadFragmentDash(new ProfileFragment() , false);
+//                    }
 
 
                     return true;
@@ -130,26 +130,26 @@
 
             if(frag != null){
 
-                if(frag instanceof HomeFragment){
-                    bottomNavigationView.setSelectedItemId(R.id.btnHome);
-                    Toast.makeText(getContext(), "home", Toast.LENGTH_SHORT).show();
-                }
-                if (frag instanceof  SearchFragment) {
-                    bottomNavigationView.setSelectedItemId(R.id.btnSearch);
-                    Toast.makeText(getContext(), "search", Toast.LENGTH_SHORT).show();
-                }
-                if (frag instanceof  CreatePostFragment) {
-                    bottomNavigationView.setSelectedItemId(R.id.btnCreatePost);
-                    Toast.makeText(getContext(), "post", Toast.LENGTH_SHORT).show();
-                }
-                if (frag instanceof  DMFragment) {
-                    bottomNavigationView.setSelectedItemId(R.id.btnMessage);
-                    Toast.makeText(getContext(), "message", Toast.LENGTH_SHORT).show();
-                }
-                if (frag instanceof  ProfileFragment) {
-                    bottomNavigationView.setSelectedItemId(R.id.btnProfile);
-                    Toast.makeText(getContext(), "profile", Toast.LENGTH_SHORT).show();
-                }
+//                if(frag instanceof HomeFragment){
+//                    bottomNavigationView.setSelectedItemId(R.id.btnHome);
+//                    Toast.makeText(getContext(), "home", Toast.LENGTH_SHORT).show();
+//                }
+//                if (frag instanceof  SearchFragment) {
+//                    bottomNavigationView.setSelectedItemId(R.id.btnSearch);
+//                    Toast.makeText(getContext(), "search", Toast.LENGTH_SHORT).show();
+//                }
+//                if (frag instanceof  CreatePostFragment) {
+//                    bottomNavigationView.setSelectedItemId(R.id.btnCreatePost);
+//                    Toast.makeText(getContext(), "post", Toast.LENGTH_SHORT).show();
+//                }
+//                if (frag instanceof  DMFragment) {
+//                    bottomNavigationView.setSelectedItemId(R.id.btnMessage);
+//                    Toast.makeText(getContext(), "message", Toast.LENGTH_SHORT).show();
+//                }
+//                if (frag instanceof  ProfileFragment) {
+//                    bottomNavigationView.setSelectedItemId(R.id.btnProfile);
+//                    Toast.makeText(getContext(), "profile", Toast.LENGTH_SHORT).show();
+//                }
 
             }else {
                 Toast.makeText(getContext(), "null", Toast.LENGTH_SHORT).show();
