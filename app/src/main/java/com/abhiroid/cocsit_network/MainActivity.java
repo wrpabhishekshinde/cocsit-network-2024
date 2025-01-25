@@ -1,6 +1,7 @@
 package com.abhiroid.cocsit_network;
 
 import android.os.Bundle;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.abhiroid.cocsit_network.databinding.ActivityMainBinding;
 import com.abhiroid.cocsit_network.fragments.AuthenticationFragment;
 import com.abhiroid.cocsit_network.fragments.BioProfileFragment;
 import com.abhiroid.cocsit_network.fragments.CreateUserNameFragment;
@@ -30,18 +32,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    ActivityMainBinding binding;
 
+    FrameLayout frameLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
+        //binding.containrMainA.
         loadFragment(new SearchFragment());
     }
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
 
-            ft.add(R.id.frameLayout , fragment);
+           // ft.add(R.id.frameLayout , fragment);
 //            fm.popBackStack("Main" , FragmentManager.POP_BACK_STACK_INCLUSIVE);
 //            ft.addToBackStack("Main Activity");
             ft.commit();
