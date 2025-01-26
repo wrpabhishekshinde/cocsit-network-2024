@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
 //        bottomNavigationView = view.findViewById(R.id.bottom_nav_view);
 
 
-        ((DashboardControllerActivity)getActivity()).setSupportActionBar(toolbar);
+       // ((DashboardControllerActivity)getActivity()).setSupportActionBar(toolbar);
         toggle = new ActionBarDrawerToggle(getActivity() ,drawerLayout ,  toolbar  , R.string.open_drawer , R.string.close_drawer);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
 
 
         //for drawer layout
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+/*        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -97,6 +97,8 @@ public class HomeFragment extends Fragment {
                 return true;
             }
         });
+
+ */
 
 
 //        //for bottom nav layout
@@ -142,7 +144,7 @@ public class HomeFragment extends Fragment {
             FragmentManager fm = getParentFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
 
-            ft.replace(R.id.frameLayout , fragment);
+            ft.replace(R.id.containrMainA , fragment);
 
             fm.popBackStack(ROOT_FRAGMENT_TAG , FragmentManager.POP_BACK_STACK_INCLUSIVE);
             ft.addToBackStack("Home Fragment");

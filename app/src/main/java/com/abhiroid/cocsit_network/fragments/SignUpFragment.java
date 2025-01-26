@@ -411,7 +411,7 @@ public class SignUpFragment extends Fragment  implements View.OnClickListener {
             FragmentManager fm = getParentFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
 
-            ft.replace(R.id.frameLayout , fragment);
+            ft.replace(R.id.containrMainA , fragment);
 //            fm.popBackStack("Main" , FragmentManager.POP_BACK_STACK_INCLUSIVE);
             ft.addToBackStack("Main Activity");
             ft.commit();
