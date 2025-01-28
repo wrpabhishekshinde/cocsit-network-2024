@@ -30,7 +30,10 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:layout_marginTop="2dp"
-/>
+        />
+
+    <!-- Contact List -->
+
     <TextView
         android:id="@+id/tvContList"
         android:layout_width="wrap_content"
@@ -54,7 +57,23 @@
         android:src="@drawable/closing"
         />
 
-    <!-- Contact List -->
+    <!-- status or story of the user -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/tvContList"
+        android:background="#123456"
+        android:orientation="horizontal"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerStatus"
+            />
+    </LinearLayout>
 
     <!-- Message List Section -->
     <androidx.cardview.widget.CardView
