@@ -23,7 +23,7 @@ import com.abhiroid.cocsit_network.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    ActivityMainBinding binding;
+    private ActivityMainBinding binding;
     private boolean doubleBackToExitPressedOnce = false;
 
     FrameLayout frameLayout;

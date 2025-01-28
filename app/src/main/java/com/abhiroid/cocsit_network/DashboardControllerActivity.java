@@ -64,7 +64,10 @@ public class DashboardControllerActivity extends AppCompatActivity {
 //                return true;
 //            }
 //        });
+
+        loadFragment(new CreatePostFragment());
     }
+
 
     //load other fragments ....
     public void loadFragment(Fragment fragment){

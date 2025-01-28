@@ -17,7 +17,7 @@
         android:textSize="27sp"
         android:layout_centerHorizontal="true"
         android:textColor="#0B0A0A"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="20dp"
 />
     <ImageView
@@ -25,18 +25,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:src="@drawable/cross_two"
         />
+
+    <ImageView
+            android:id="@+id/imgPreview"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_above="@+id/postCard"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        />
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/postCard"
-        android:layout_below="@id/tvPost"
         app:cardCornerRadius="20dp"
-        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         >
@@ -70,7 +82,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imgPost"
+                android:id="@+id/imgCamera"
                 android:src="@drawable/camera_icon"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@id/etPost"
@@ -87,7 +99,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:id="@+id/btnTieIn"
+        android:id="@+id/btnPost"
         android:backgroundTint="#FF475A"
         android:text="POST"
         android:layout_below="@+id/postCard"

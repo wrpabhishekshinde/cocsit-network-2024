@@ -1,7 +1,9 @@
 package com.abhiroid.cocsit_network.util;
 
+import com.abhiroid.cocsit_network.apis.PostAPI;
 import com.abhiroid.cocsit_network.apis.UserEduAPI;
 import com.abhiroid.cocsit_network.apis.UsersAPI;
+import com.abhiroid.cocsit_network.model_response.PostModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -12,7 +14,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = "http://192.168.63.89/cocsit_network/";
+    private static final String BASE_URL = "http://192.168.1.215/cocsit_network/";
+
     private static RetrofitClient retrofitClient;
     private Retrofit retrofit;
 
@@ -60,5 +63,8 @@ public class RetrofitClient {
 
     public UserEduAPI getUserEduApi(){
         return  retrofit.create(UserEduAPI.class);
+    }
+    public PostAPI getPostApi(){
+        return retrofit.create(PostAPI.class);
     }
 }
