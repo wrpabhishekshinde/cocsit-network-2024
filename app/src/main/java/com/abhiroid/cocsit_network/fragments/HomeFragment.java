@@ -101,34 +101,6 @@ public class HomeFragment extends Fragment {
  */
 
 
-//        //for bottom nav layout
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//                int id = item.getItemId();
-//
-//                if(id == R.id.btnHome){
-//                    loadFragment(new HomeFragment());
-//                }
-//                if(id == R.id.btnSearch){
-//                    loadFragmentOnDash(new SearchFragment());
-//                }
-//                if(id == R.id.btnCreatePost){
-//                    loadFragmentOnDash(new CreatePostFragment());
-//                }
-//                if(id == R.id.btnMessage){
-//                    loadFragmentOnDash(new DMFragment());
-//                }
-//                if(id == R.id.btnProfile){
-//                    loadFragmentOnDash(new ProfileFragment());
-//                }
-//
-//
-//                return true;
-//            }
-//        });
-
 
         return view;
     }
