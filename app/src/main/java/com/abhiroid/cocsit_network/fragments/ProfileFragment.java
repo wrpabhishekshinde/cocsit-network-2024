@@ -43,7 +43,7 @@ public class ProfileFragment extends Fragment {
         if(fragment != null) {
             FragmentManager fm = getParentFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.frameLayout , fragment);
+            ft.replace(R.id.containrMainA , fragment);
 //            fm.popBackStack(ROOT_FRAGMENT_TAG , FragmentManager.POP_BACK_STACK_INCLUSIVE);
             ft.addToBackStack("Profile Fragment");
 

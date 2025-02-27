@@ -32,7 +32,7 @@
             // Inflate the layout for this fragment
             View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-            bottomNavigationView = view.findViewById(R.id.bottomNav);
+//            bottomNavigationView = view.findViewById(R.id.bottomNav);
 
             //default frag load
             loadFragmentDash(new HomeFragment() , true);

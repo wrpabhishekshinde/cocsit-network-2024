@@ -55,12 +55,12 @@ public class HomeFragment extends Fragment {
 
 
         drawerLayout = view.findViewById(R.id.drawerLayout);
-        navigationView = view.findViewById(R.id.navigationView);
+//        navigationView = view.findViewById(R.id.navigationView);
         toolbar = view.findViewById(R.id.dashToolbar);
 //        bottomNavigationView = view.findViewById(R.id.bottom_nav_view);
 
 
-        ((DashboardControllerActivity)getActivity()).setSupportActionBar(toolbar);
+       // ((DashboardControllerActivity)getActivity()).setSupportActionBar(toolbar);
         toggle = new ActionBarDrawerToggle(getActivity() ,drawerLayout ,  toolbar  , R.string.open_drawer , R.string.close_drawer);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
 
 
         //for drawer layout
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+/*        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -98,34 +98,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
+ */
 
-//        //for bottom nav layout
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//                int id = item.getItemId();
-//
-//                if(id == R.id.btnHome){
-//                    loadFragment(new HomeFragment());
-//                }
-//                if(id == R.id.btnSearch){
-//                    loadFragmentOnDash(new SearchFragment());
-//                }
-//                if(id == R.id.btnCreatePost){
-//                    loadFragmentOnDash(new CreatePostFragment());
-//                }
-//                if(id == R.id.btnMessage){
-//                    loadFragmentOnDash(new DMFragment());
-//                }
-//                if(id == R.id.btnProfile){
-//                    loadFragmentOnDash(new ProfileFragment());
-//                }
-//
-//
-//                return true;
-//            }
-//        });
 
 
         return view;
@@ -142,7 +116,7 @@ public class HomeFragment extends Fragment {
             FragmentManager fm = getParentFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
 
-            ft.replace(R.id.frameLayout , fragment);
+            ft.replace(R.id.containrMainA , fragment);
 
             fm.popBackStack(ROOT_FRAGMENT_TAG , FragmentManager.POP_BACK_STACK_INCLUSIVE);
             ft.addToBackStack("Home Fragment");

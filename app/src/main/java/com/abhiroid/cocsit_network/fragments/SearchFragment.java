@@ -29,6 +29,31 @@ public class SearchFragment extends Fragment {
         notiRecylerView = view.findViewById(R.id.notiRecyclerView);
         notiRecylerView.setLayoutManager(new LinearLayoutManager(getContext() , LinearLayoutManager.VERTICAL , false));
 
+
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
+        notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
         notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
         notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
         notiSugMdoelArrayList.add(new NotiSugMdoel(R.drawable.post_image , "Ghost"));
