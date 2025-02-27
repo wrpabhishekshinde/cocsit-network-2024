@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Header Section -->
     <RelativeLayout
@@ -43,8 +38,8 @@
             android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/closing"
-            android:contentDescription="Close" />
+            android:contentDescription="Close"
+            android:src="@drawable/closing" />
 
         <!-- Contact List -->
         <HorizontalScrollView
@@ -62,9 +57,9 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="16dp"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="16dp">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="48dp"
@@ -74,10 +69,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:text="Rust"
                         android:textColor="#FFFFFF"
-                        android:textSize="12sp"
-                        android:gravity="center" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- Add more contacts similarly -->
